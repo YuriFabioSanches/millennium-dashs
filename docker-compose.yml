@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  millenium-dashs:
+    container_name: millenium-dashs
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    restart: always
+    environment:
+      - STREAMLIT_SERVER_HEADLESS=true
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_ENABLECORS=false
+      - STREAMLIT_BROWSER_GATHERUSAGESTATS=false
